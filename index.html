@@ -9,6 +9,43 @@
 </head>
 <body>
     <h1>Final Titan</h1>
+    <div class="filters">
+        <div class="filter">
+            <h2>Order By</h2>
+            <ul class="filters__list">
+                <li class="filters__list-item">
+                    <input checked class="filters__input js_criteria js_order-type js_htl" type="checkbox" id="htl" name="checkbox" value="1">
+                    <label class="filters__label" for="htl">Highest to Lowest</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_order-type js_lth" type="checkbox" id="lth" name="checkbox" value="1">
+                    <label class="filters__label" for="lth">Lowest to Highest</label>
+                </li>
+            </ul>
+            <ul class="filters__list">
+                <li class="filters__list-item">
+                    <input checked class="filters__input js_criteria js_order js_name" type="checkbox" id="name" name="checkbox" value="1">
+                    <label class="filters__label" for="name">Name</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_order js_health" type="checkbox" id="health" name="checkbox" value="1">
+                    <label class="filters__label" for="health">Health</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_order js_speed" type="checkbox" id="speed" name="checkbox" value="1">
+                    <label class="filters__label" for="speed">Speed</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_order js_total-damage" type="checkbox" id="total-damage" name="checkbox" value="1">
+                    <label class="filters__label" for="total-damage">Total Attack Damage</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_order js_single-damage" type="checkbox" id="single-damage" name="checkbox" value="1">
+                    <label class="filters__label" for="single-damage">Single Attack Damage</label>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="champions">
 
     </div>

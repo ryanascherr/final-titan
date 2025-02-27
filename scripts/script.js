@@ -4,7 +4,7 @@ const supabaseData = window.supabase.createClient(supabaseURL, supabaseKey);
 const { data, error } = await supabaseData.from('champions').select()
 .order('name', { ascending: true });
 const champions = data;
-console.log(champions);
+// console.log(champions);
 
 placeChampions(champions);
 function placeChampions(array) {
@@ -17,36 +17,99 @@ function placeChampions(array) {
     });
 }
 
-// orderByTotalPower();
-function orderByTotalPower() {
+$(".js_order").click(function() {
+    $('.js_order').prop('checked', false);
+    $(this).prop('checked', true);
+});
+
+$(".js_order-type").click(function() {
+    $('.js_order-type').prop('checked', false);
+    $(this).prop('checked', true);
+});
+
+$('.js_criteria').click(function() {
+    $(".champions").empty();
+    getOrder();
+});
+
+function getOrder() {
+    let name = $(".js_name").is(':checked');
+    let health = $(".js_health").is(':checked');
+    let speed = $(".js_speed").is(':checked');
+    let totalDamage = $(".js_total-damage").is(':checked');
+    let singleDamage = $(".js_single-damage").is(':checked');
+    let highToLow = $(".js_htl").is(':checked');
+
+    if (name) {
+        orderByName(highToLow);
+    }
+    if (health) {
+        orderByHealth(highToLow);
+    }
+    if (speed) {
+        orderBySpeed(highToLow);
+    }
+    if (totalDamage) {
+        orderByTotalDamage(highToLow);
+    }
+    if (singleDamage) {
+        orderBySingleDamage(highToLow);
+    }
+}
+
+// orderByTotalDamage();
+function orderByTotalDamage(highToLow) {
     $(champions).each(function( index, champion) {
         champion.totalAttack = champion.attack1 + champion.attack2 + champion.attack3 + champion.attack4;
     });
 
-    console.log("--- ORDER BY POWER ---");
+    console.log("--- ORDER BY TOTAL DAMAGE ---");
+
+    let championsByTotalDamage = [];
+
+    if (highToLow) {
+        championsByTotalDamage = champions.sort((a, b) => b.totalAttack - a.totalAttack);
+    } else {
+        championsByTotalDamage = champions.sort((a, b) => a.totalAttack - b.totalAttack);
+    }
     
-    let championsByPower = champions.sort((a, b) => b.totalAttack - a.totalAttack);
-    $(championsByPower).each(function( index, champion ) {
+    $(championsByTotalDamage).each(function( index, champion ) {
         console.log(champion.name, champion.totalAttack);
     });
 
-    placeChampions(championsByPower);
+    placeChampions(championsByTotalDamage);
 }
 
-// orderBySinglePower();
-function orderBySinglePower() {
+// orderBySingleDamage();
+function orderBySingleDamage(highToLow) {
     $(champions).each(function( index, champion) {
         let highestAttack = champion.attack1;
-        highestAttack = champion.attack2 >= champion.attack1 ? champion.attack2 : champion.attack1;
-        highestAttack = champion.attack3 >= champion.attack2 ? champion.attack3 : champion.attack2;
-        highestAttack = champion.attack4 >= champion.attack3 ? champion.attack4 : champion.attack3;
+        if (champion.attack2 >= champion.attack1) {
+            highestAttack = champion.attack2;
+        }
+        if (champion.attack3 >= champion.attack2) {
+            highestAttack = champion.attack3;
+        }
+        if (champion.attack4 >= champion.attack3) {
+            highestAttack = champion.attack4;
+        }
 
         champion.highestAttack = highestAttack;
+        if (champion.name == "Neo-Leonidas") {
+            console.log("NEOOO: " + champion.highestAttack);
+        }
     });
 
     console.log("--- ORDER BY HIGHEST ATTACK ---");
 
-    let championsByHighestAttack = champions.sort((a, b) => b.highestAttack - a.highestAttack);
+    let championsByHighestAttack = [];
+
+    if (highToLow) {
+        championsByHighestAttack = champions.sort((a, b) => b.highestAttack - a.highestAttack);
+    } else  {
+        championsByHighestAttack = champions.sort((a, b) => a.highestAttack - b.highestAttack);
+    }
+
     $(championsByHighestAttack).each(function( index, champion) {
         console.log(champion.name, champion.highestAttack);
     });
@@ -54,11 +117,60 @@ function orderBySinglePower() {
     placeChampions(championsByHighestAttack);
 }
 
-// orderBySpeed();
-function orderBySpeed() {
-    console.log("--- ORDER BY SPEED ---");
+// orderByName();
+function orderByName(highToLow) {
+    console.log("--- ORDER BY NAME ---");
+
+    let championsByName = [];
+
+    if (highToLow) {
+        championsByName = champions.sort(function(a, b) {
+            return a === b ? 0 : a.name < b.name ? -1 : 1;
+        });
+    } else {
+        championsByName = champions.sort(function(a, b) {
+            return a === b ? 0 : b.name < a.name ? -1 : 1;
+        });
+    }
     
-    let championsBySpeed = champions.sort((a, b) => b.speed - a.speed);
+    $(championsByName).each(function( index, champion ) {
+        console.log(champion.name);
+    });
+
+    placeChampions(championsByName);
+}
+
+// orderByHealth();
+function orderByHealth(highToLow) {
+    console.log("--- ORDER BY Health ---");
+
+    let championsByHealth = [];
+
+    if (highToLow) {
+        championsByHealth = champions.sort((a, b) => b.health - a.health);
+    } else {
+        championsByHealth = champions.sort((a, b) => a.health - b.health);
+    }
+    
+    $(championsByHealth).each(function( index, champion ) {
+        console.log(champion.name, champion.health);
+    });
+
+    placeChampions(championsByHealth);
+}
+
+// orderBySpeed();
+function orderBySpeed(highToLow) {
+    console.log("--- ORDER BY SPEED ---");
+
+    let championsBySpeed = [];
+
+    if (highToLow) {
+        championsBySpeed = champions.sort((a, b) => b.speed - a.speed);
+    } else {
+        championsBySpeed = champions.sort((a, b) => a.speed - b.speed);
+    }
+    
     $(championsBySpeed).each(function( index, champion ) {
         console.log(champion.name, champion.speed);
     });
