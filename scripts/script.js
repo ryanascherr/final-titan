@@ -6,12 +6,13 @@ const { data, error } = await supabaseData.from('champions').select()
 const champions = data;
 console.log(champions);
 
+placeChampions(champions);
 function placeChampions(array) {
     $(array).each(function( index, champion) {
         let name = champion.name.toLowerCase();
         name = name.replace(/ /g,"_");
-        $("body").append(`
-            <img src="../img/champion_${name}.png">
+        $(".champions").append(`
+            <img class="champions__champion" src="../img/champion_${name}.png">
         `)
     });
 }
@@ -120,7 +121,7 @@ function hasBenchPower() {
     placeChampions(championsWithBenchPower);
 }
 
-hasUltimateForm();
+// hasUltimateForm();
 function hasUltimateForm() {
     let championsWithUltimateForm = champions.filter(champion => champion.has_ultimate_form);
     console.log("--- HAS ULTIMATE FORM ---");
