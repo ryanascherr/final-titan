@@ -6,6 +6,16 @@ const { data, error } = await supabaseData.from('champions').select()
 const champions = data;
 console.log(champions);
 
+function placeChampions(array) {
+    $(array).each(function( index, champion) {
+        let name = champion.name.toLowerCase();
+        name = name.replace(/ /g,"_");
+        $("body").append(`
+            <img src="../img/champion_${name}.png">
+        `)
+    });
+}
+
 // orderByTotalPower();
 function orderByTotalPower() {
     $(champions).each(function( index, champion) {
@@ -18,6 +28,8 @@ function orderByTotalPower() {
     $(championsByPower).each(function( index, champion ) {
         console.log(champion.name, champion.totalAttack);
     });
+
+    placeChampions(championsByPower);
 }
 
 // orderBySinglePower();
@@ -37,14 +49,85 @@ function orderBySinglePower() {
     $(championsByHighestAttack).each(function( index, champion) {
         console.log(champion.name, champion.highestAttack);
     });
+
+    placeChampions(championsByHighestAttack);
 }
 
-hasArmor();
+// orderBySpeed();
+function orderBySpeed() {
+    console.log("--- ORDER BY SPEED ---");
+    
+    let championsBySpeed = champions.sort((a, b) => b.speed - a.speed);
+    $(championsBySpeed).each(function( index, champion ) {
+        console.log(champion.name, champion.speed);
+    });
+
+    placeChampions(championsBySpeed);
+}
+
+// hasArmor();
 function hasArmor() {
     let championsWithArmor = champions.filter(champion => champion.armor != 0);
     console.log("--- HAS ARMOR ---");
     $(championsWithArmor).each(function( index, champion) {
         console.log(champion.name);
     });
+
+    placeChampions(championsWithArmor);
+}
+
+// interactsWithUpgradeCards();
+function interactsWithUpgradeCards() {
+    let championsWithUpgradeCards = champions.filter(champion => champion.interacts_with_upgrade_cards);
+    console.log("--- UPGRADE CARDS ---");
+    $(championsWithUpgradeCards).each(function( index, champion) {
+        console.log(champion.name);
+    });
+
+    placeChampions(championsWithUpgradeCards);
+}
+
+// hasDrain();
+function hasDrain() {
+    let championsWithDrain = champions.filter(champion => champion.has_drain);
+    console.log("--- HAS DRAIN ---");
+    $(championsWithDrain).each(function( index, champion) {
+        console.log(champion.name);
+    });
+
+    placeChampions(championsWithDrain);
+}
+
+// canCounter();
+function canCounter() {
+    let championsWithCounter = champions.filter(champion => champion.has_counter);
+    console.log("--- CAN COUNTER ---");
+    $(championsWithCounter).each(function( index, champion) {
+        console.log(champion.name);
+    });
+
+    placeChampions(championsWithCounter);
+}
+
+// hasBenchPower();
+function hasBenchPower() {
+    let championsWithBenchPower = champions.filter(champion => champion.bench_power);
+    console.log("--- HAS BENCH POWER ---");
+    $(championsWithBenchPower).each(function( index, champion) {
+        console.log(champion.name + ": " + champion.bench_power);
+    });
+
+    placeChampions(championsWithBenchPower);
+}
+
+hasUltimateForm();
+function hasUltimateForm() {
+    let championsWithUltimateForm = champions.filter(champion => champion.has_ultimate_form);
+    console.log("--- HAS ULTIMATE FORM ---");
+    $(championsWithUltimateForm).each(function( index, champion) {
+        console.log(champion.name);
+    });
+
+    placeChampions(championsWithUltimateForm);
 }
 

@@ -1,4 +1,12 @@
 body {
   color: green;
-  background-color: black;
+  background-color: #121315;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+img {
+  max-width: 500px;
 }/*# sourceMappingURL=main.css.map */
