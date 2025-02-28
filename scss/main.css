@@ -21,6 +21,15 @@
   width: 100%;
 }
 
+.filters__list-item {
+  display: flex;
+  align-items: center;
+}
+.filters__icon {
+  width: 75px;
+  margin-left: 7.5px;
+}
+
 body {
   background-color: #1F1A1E;
   color: white;

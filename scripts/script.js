@@ -12,7 +12,7 @@ function placeChampions(array) {
         let name = champion.name.toLowerCase();
         name = name.replace(/ /g,"_");
         $(".champions").append(`
-            <img loading="lazy" class="champions__champion" src="../img/champion_${name}.png">
+            <img loading="lazy" class="champions__champion" src="../img/champions/champion_${name}.png">
         `)
     });
 }
@@ -37,13 +37,59 @@ function getFilters(array) {
     let armor = $(".js_armor").is(':checked');
     let drain = $(".js_drain").is(':checked');
     let counter = $(".js_counter").is(':checked');
+    let defeat = $(".js_defeat").is(':checked');
+    let exclamation = $(".js_exclamation").is(':checked');
 
     if (armor) {
         array = array.filter(creature => creature.armor != 0);
     }
-
     if (drain) {
         array = array.filter(creature => creature.has_drain);
+    }
+    if (counter) {
+        array = array.filter(creature => creature.has_counter);
+    }
+    if (defeat) {
+        array = array.filter(creature => creature.has_defeat_icon);
+    }
+    if (exclamation) {
+        array = array.filter(creature => creature.has_exclamation_point);
+    }
+
+    let action = $(".js_action").is(':checked');
+    let armorToken = $(".js_armor-token").is(':checked');
+    let dodge = $(".js_dodge").is(':checked');
+    let poison = $(".js_poison").is(':checked');
+    let power = $(".js_power").is(':checked');
+
+    if (action) {
+        array = array.filter(creature => creature.gives_action_token);
+    }
+    if (armorToken) {
+        array = array.filter(creature => creature.gives_armor_token);
+    }
+    if (dodge) {
+        array = array.filter(creature => creature.gives_dodge_token);
+    }
+    if (poison) {
+        array = array.filter(creature => creature.has_poison);
+    }
+    if (power) {
+        array = array.filter(creature => creature.gives_power_token);
+    }
+
+    let special = $(".js_special").is(':checked');
+    let ultimate = $(".js_ultimate").is(':checked');
+    let bench = $(".js_bench").is(':checked');
+
+    if (special) {
+        array = array.filter(creature => creature.special_ability_name);
+    }
+    if (ultimate) {
+        array = array.filter(creature => creature.has_ultimate_form);
+    }
+    if (bench) {
+        array = array.filter(creature => creature.bench_power);
     }
 
     return array;
