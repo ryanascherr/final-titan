@@ -12,7 +12,7 @@ function placeChampions(array) {
         let name = champion.name.toLowerCase();
         name = name.replace(/ /g,"_");
         $(".champions").append(`
-            <img class="champions__champion" src="../img/champion_${name}.png">
+            <img loading="lazy" class="champions__champion" src="../img/champion_${name}.png">
         `)
     });
 }
@@ -29,10 +29,27 @@ $(".js_order-type").click(function() {
 
 $('.js_criteria').click(function() {
     $(".champions").empty();
-    getOrder();
+    let array = getFilters(champions);
+    getOrder(array);
 });
 
-function getOrder() {
+function getFilters(array) {
+    let armor = $(".js_armor").is(':checked');
+    let drain = $(".js_drain").is(':checked');
+    let counter = $(".js_counter").is(':checked');
+
+    if (armor) {
+        array = array.filter(creature => creature.armor != 0);
+    }
+
+    if (drain) {
+        array = array.filter(creature => creature.has_drain);
+    }
+
+    return array;
+}
+
+function getOrder(array) {
     let name = $(".js_name").is(':checked');
     let health = $(".js_health").is(':checked');
     let speed = $(".js_speed").is(':checked');
@@ -41,25 +58,25 @@ function getOrder() {
     let highToLow = $(".js_htl").is(':checked');
 
     if (name) {
-        orderByName(highToLow);
+        orderByName(array, highToLow);
     }
     if (health) {
-        orderByHealth(highToLow);
+        orderByHealth(array, highToLow);
     }
     if (speed) {
-        orderBySpeed(highToLow);
+        orderBySpeed(array, highToLow);
     }
     if (totalDamage) {
-        orderByTotalDamage(highToLow);
+        orderByTotalDamage(array, highToLow);
     }
     if (singleDamage) {
-        orderBySingleDamage(highToLow);
+        orderBySingleDamage(array, highToLow);
     }
 }
 
 // orderByTotalDamage();
-function orderByTotalDamage(highToLow) {
-    $(champions).each(function( index, champion) {
+function orderByTotalDamage(array, highToLow) {
+    $(array).each(function( index, champion) {
         champion.totalAttack = champion.attack1 + champion.attack2 + champion.attack3 + champion.attack4;
     });
 
@@ -68,9 +85,9 @@ function orderByTotalDamage(highToLow) {
     let championsByTotalDamage = [];
 
     if (highToLow) {
-        championsByTotalDamage = champions.sort((a, b) => b.totalAttack - a.totalAttack);
+        championsByTotalDamage = array.sort((a, b) => b.totalAttack - a.totalAttack);
     } else {
-        championsByTotalDamage = champions.sort((a, b) => a.totalAttack - b.totalAttack);
+        championsByTotalDamage = array.sort((a, b) => a.totalAttack - b.totalAttack);
     }
     
     $(championsByTotalDamage).each(function( index, champion ) {
@@ -81,8 +98,8 @@ function orderByTotalDamage(highToLow) {
 }
 
 // orderBySingleDamage();
-function orderBySingleDamage(highToLow) {
-    $(champions).each(function( index, champion) {
+function orderBySingleDamage(array, highToLow) {
+    $(array).each(function( index, champion) {
         let highestAttack = champion.attack1;
         if (champion.attack2 >= champion.attack1) {
             highestAttack = champion.attack2;
@@ -105,9 +122,9 @@ function orderBySingleDamage(highToLow) {
     let championsByHighestAttack = [];
 
     if (highToLow) {
-        championsByHighestAttack = champions.sort((a, b) => b.highestAttack - a.highestAttack);
+        championsByHighestAttack = array.sort((a, b) => b.highestAttack - a.highestAttack);
     } else  {
-        championsByHighestAttack = champions.sort((a, b) => a.highestAttack - b.highestAttack);
+        championsByHighestAttack = array.sort((a, b) => a.highestAttack - b.highestAttack);
     }
 
     $(championsByHighestAttack).each(function( index, champion) {
@@ -118,17 +135,17 @@ function orderBySingleDamage(highToLow) {
 }
 
 // orderByName();
-function orderByName(highToLow) {
+function orderByName(array, highToLow) {
     console.log("--- ORDER BY NAME ---");
 
     let championsByName = [];
 
     if (highToLow) {
-        championsByName = champions.sort(function(a, b) {
+        championsByName = array.sort(function(a, b) {
             return a === b ? 0 : a.name < b.name ? -1 : 1;
         });
     } else {
-        championsByName = champions.sort(function(a, b) {
+        championsByName = array.sort(function(a, b) {
             return a === b ? 0 : b.name < a.name ? -1 : 1;
         });
     }
@@ -141,15 +158,15 @@ function orderByName(highToLow) {
 }
 
 // orderByHealth();
-function orderByHealth(highToLow) {
+function orderByHealth(array, highToLow) {
     console.log("--- ORDER BY Health ---");
 
     let championsByHealth = [];
 
     if (highToLow) {
-        championsByHealth = champions.sort((a, b) => b.health - a.health);
+        championsByHealth = array.sort((a, b) => b.health - a.health);
     } else {
-        championsByHealth = champions.sort((a, b) => a.health - b.health);
+        championsByHealth = array.sort((a, b) => a.health - b.health);
     }
     
     $(championsByHealth).each(function( index, champion ) {
@@ -160,15 +177,15 @@ function orderByHealth(highToLow) {
 }
 
 // orderBySpeed();
-function orderBySpeed(highToLow) {
+function orderBySpeed(array, highToLow) {
     console.log("--- ORDER BY SPEED ---");
 
     let championsBySpeed = [];
 
     if (highToLow) {
-        championsBySpeed = champions.sort((a, b) => b.speed - a.speed);
+        championsBySpeed = array.sort((a, b) => b.speed - a.speed);
     } else {
-        championsBySpeed = champions.sort((a, b) => a.speed - b.speed);
+        championsBySpeed = array.sort((a, b) => a.speed - b.speed);
     }
     
     $(championsBySpeed).each(function( index, champion ) {
