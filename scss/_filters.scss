@@ -49,6 +49,14 @@
         }
     }
 
+    &__select {
+        margin-left: 5px;
+
+        &:not([disabled]):hover {
+            cursor: pointer;
+        }
+    }
+
     &__label {
         display: flex;
         align-items: center;

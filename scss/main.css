@@ -65,6 +65,12 @@
 .filters__input:hover {
   cursor: pointer;
 }
+.filters__select {
+  margin-left: 5px;
+}
+.filters__select:not([disabled]):hover {
+  cursor: pointer;
+}
 .filters__label {
   display: flex;
   align-items: center;

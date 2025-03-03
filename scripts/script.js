@@ -27,6 +27,38 @@ $(".js_order-type").click(function() {
     $(this).prop('checked', true);
 });
 
+$(".js_numbers-health").click(function() {
+    let parent = $(this).parent()[0];
+    let select = $(parent).children('select')[0];
+    let input = $(parent).children('input');
+
+    if ($(input).is(':checked')) {
+        $('.js_numbers-health').prop('checked', false);
+        $(input).prop('checked', true);
+        $('.js_health-select').prop('disabled', true);
+        $(input).prop('disabled', false);
+        $(select).prop('disabled', false)
+    } else {
+        $(select).prop('disabled', true)
+    }
+});
+
+$(".js_numbers-speed").click(function() {
+    let parent = $(this).parent()[0];
+    let select = $(parent).children('select')[0];
+    let input = $(parent).children('input');
+
+    if ($(input).is(':checked')) {
+        $('.js_numbers-speed').prop('checked', false);
+        $(input).prop('checked', true);
+        $('.js_speed-select').prop('disabled', true);
+        $(input).prop('disabled', false);
+        $(select).prop('disabled', false)
+    } else {
+        $(select).prop('disabled', true)
+    }
+});
+
 $(".js_artist").click(function() {
     let isNowChecked = $(this).is(':checked');
     $('.js_artist').prop('checked', false);
@@ -41,6 +73,12 @@ $('.js_criteria').click(function() {
     getOrder(array);
 });
 
+$('.js_select').on('change', function() {
+    $(".champions").empty();
+    let array = getFilters(champions);
+    getOrder(array);
+});
+
 function getFilters(array) {
     let armor = $(".js_armor").is(':checked');
     let drain = $(".js_drain").is(':checked');
@@ -50,22 +88,22 @@ function getFilters(array) {
     let reroll = $(".js_reroll").is(':checked');
 
     if (armor) {
-        array = array.filter(creature => creature.armor != 0);
+        array = array.filter(champion => champion.armor != 0);
     }
     if (drain) {
-        array = array.filter(creature => creature.has_drain);
+        array = array.filter(champion => champion.has_drain);
     }
     if (counter) {
-        array = array.filter(creature => creature.has_counter);
+        array = array.filter(champion => champion.has_counter);
     }
     if (defeat) {
-        array = array.filter(creature => creature.has_defeat_icon);
+        array = array.filter(champion => champion.has_defeat_icon);
     }
     if (exclamation) {
-        array = array.filter(creature => creature.has_exclamation_point);
+        array = array.filter(champion => champion.has_exclamation_point);
     }
     if (reroll) {
-        array = array.filter(creature => creature.can_reroll);
+        array = array.filter(champion => champion.can_reroll);
     }
 
     let action = $(".js_action").is(':checked');
@@ -75,19 +113,19 @@ function getFilters(array) {
     let power = $(".js_power").is(':checked');
 
     if (action) {
-        array = array.filter(creature => creature.gives_action_token);
+        array = array.filter(champion => champion.gives_action_token);
     }
     if (armorToken) {
-        array = array.filter(creature => creature.gives_armor_token);
+        array = array.filter(champion => champion.gives_armor_token);
     }
     if (dodge) {
-        array = array.filter(creature => creature.gives_dodge_token);
+        array = array.filter(champion => champion.gives_dodge_token);
     }
     if (poison) {
-        array = array.filter(creature => creature.has_poison);
+        array = array.filter(champion => champion.has_poison);
     }
     if (power) {
-        array = array.filter(creature => creature.gives_power_token);
+        array = array.filter(champion => champion.gives_power_token);
     }
 
     let special = $(".js_special").is(':checked');
@@ -97,19 +135,19 @@ function getFilters(array) {
     let startOfFight = $(".js_start-fight").is(':checked');
 
     if (special) {
-        array = array.filter(creature => creature.special_ability_name);
+        array = array.filter(champion => champion.special_ability_name);
     }
     if (ultimate) {
-        array = array.filter(creature => creature.has_ultimate_form);
+        array = array.filter(champion => champion.has_ultimate_form);
     }
     if (bench) {
-        array = array.filter(creature => creature.bench_power);
+        array = array.filter(champion => champion.bench_power);
     }
     if (startOfGame) {
-        array = array.filter(creature => creature.start_of_game);
+        array = array.filter(champion => champion.start_of_game);
     }
     if (startOfFight) {
-        array = array.filter(creature => creature.start_of_fight);
+        array = array.filter(champion => champion.start_of_fight);
     }
 
     let llythium = $(".js_llythium").is(':checked');
@@ -122,28 +160,80 @@ function getFilters(array) {
     let martynets = $(".js_martynets").is(':checked');
 
     if (llythium) {
-        array = array.filter(creature => creature.artist == "Llythium");
+        array = array.filter(champion => champion.artist == "Llythium");
     }
     if (desiati) {
-        array = array.filter(creature => creature.artist == "Emanuele Desiati");
+        array = array.filter(champion => champion.artist == "Emanuele Desiati");
     }
     if (saura) {
-        array = array.filter(creature => creature.artist == "Yona Saura");
+        array = array.filter(champion => champion.artist == "Yona Saura");
     }
     if (vallee) {
-        array = array.filter(creature => creature.artist == "Nicolas Vallee");
+        array = array.filter(champion => champion.artist == "Nicolas Vallee");
     }
     if (cuenca) {
-        array = array.filter(creature => creature.artist == "Xavier Cuenca");
+        array = array.filter(champion => champion.artist == "Xavier Cuenca");
     }
     if (votta) {
-        array = array.filter(creature => creature.artist == "Gabriele Votta");
+        array = array.filter(champion => champion.artist == "Gabriele Votta");
     }
     if (kerntke) {
-        array = array.filter(creature => creature.artist == "Jann Kerntke");
+        array = array.filter(champion => champion.artist == "Jann Kerntke");
     }
     if (martynets) {
-        array = array.filter(creature => creature.artist == "Denis Martynets");
+        array = array.filter(champion => champion.artist == "Denis Martynets");
+    }
+
+    let healthAtLeast = $('.js_health-at-least').is(':checked');
+    let healthAtMost = $('.js_health-at-most').is(':checked');
+    let healthExactly = $('.js_health-exactly').is(':checked');
+    let healthParent;
+    let healthSelect;
+    let healthNumber;
+
+    if (healthAtLeast) {
+        healthParent = $('.js_health-at-least').parent();
+    } else if (healthAtMost) {
+        healthParent = $('.js_health-at-most').parent();
+    } else if (healthExactly) {
+        healthParent = $('.js_health-exactly').parent();
+    }
+
+    healthSelect = $(healthParent).children('select');
+    healthNumber = parseInt($(healthSelect).val());
+
+    if (healthAtLeast) {
+        array = array.filter(champion => champion.health >= healthNumber);
+    } else if (healthAtMost) {
+        array = array.filter(champion => champion.health <= healthNumber);
+    } else if (healthExactly) {
+        array = array.filter(champion => champion.health == healthNumber);
+    }
+
+    let speedAtLeast = $('.js_speed-at-least').is(':checked');
+    let speedAtMost = $('.js_speed-at-most').is(':checked');
+    let speedExactly = $('.js_speed-exactly').is(':checked');
+    let speedParent;
+    let speedSelect;
+    let speedNumber;
+
+    if (speedAtLeast) {
+        speedParent = $('.js_speed-at-least').parent();
+    } else if (speedAtMost) {
+        speedParent = $('.js_speed-at-most').parent();
+    } else if (speedExactly) {
+        speedParent = $('.js_speed-exactly').parent();
+    }
+
+    speedSelect = $(speedParent).children('select');
+    speedNumber = parseInt($(speedSelect).val());
+
+    if (speedAtLeast) {
+        array = array.filter(champion => champion.speed >= speedNumber);
+    } else if (speedAtMost) {
+        array = array.filter(champion => champion.speed <= speedNumber);
+    } else if (speedExactly) {
+        array = array.filter(champion => champion.speed == speedNumber);
     }
 
     return array;
