@@ -10,7 +10,7 @@
 <body>
     <h1>Final Titan</h1>
     <div class="filters">
-        <div class="filter">
+        <div class="filters__filter">
             <h2>Order By</h2>
             <ul class="filters__list">
                 <li class="filters__list-item">
@@ -22,6 +22,7 @@
                     <label class="filters__label" for="lth">Lowest to Highest</label>
                 </li>
             </ul>
+            <hr>
             <ul class="filters__list">
                 <li class="filters__list-item">
                     <input checked class="filters__input js_criteria js_order js_name" type="checkbox" id="name" name="checkbox" value="1">
@@ -45,33 +46,8 @@
                 </li>
             </ul>
         </div>
-        <div class="filter">
-            <h2>Has...</h2>
-            <ul class="filters__list">
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_other js_armor" type="checkbox" id="armor" name="checkbox" value="1">
-                    <label class="filters__label" for="armor">Armor</label>
-                </li>
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_other js_drain" type="checkbox" id="drain" name="checkbox" value="1">
-                    <label class="filters__label" for="drain">Drain</label>
-                </li>
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_other js_counter" type="checkbox" id="counter" name="checkbox" value="1">
-                    <label class="filters__label" for="counter">Counter</label>
-                </li>
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_other js_defeat" type="checkbox" id="defeat" name="checkbox" value="1">
-                    <label class="filters__label" for="defeat">Defeat</label>
-                </li>
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_other js_exclamation" type="checkbox" id="exclamation" name="checkbox" value="1">
-                    <label class="filters__label" for="exclamation">Exclamation Point</label>
-                </li>
-            </ul>
-        </div>
-        <div class="filter">
-            <h2>Has This Token</h2>
+        <div class="filters__filter">
+            <h2>Grants This Token</h2>
             <ul class="filters__list">
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_tokens js_action" type="checkbox" id="action" name="checkbox" value="1">
@@ -100,7 +76,32 @@
                 </li>
             </ul>
         </div>
-        <div class="filter">
+        <div class="filters__filter">
+            <h2>Has...</h2>
+            <ul class="filters__list">
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_other js_armor" type="checkbox" id="armor" name="checkbox" value="1">
+                    <label class="filters__label" for="armor">Armor</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_other js_drain" type="checkbox" id="drain" name="checkbox" value="1">
+                    <label class="filters__label" for="drain">Drain</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_other js_counter" type="checkbox" id="counter" name="checkbox" value="1">
+                    <label class="filters__label" for="counter">Counter</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_other js_defeat" type="checkbox" id="defeat" name="checkbox" value="1">
+                    <label class="filters__label" for="defeat">Defeat</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_other js_exclamation" type="checkbox" id="exclamation" name="checkbox" value="1">
+                    <label class="filters__label" for="exclamation">Exclamation Point</label>
+                </li>
+            </ul>
+        </div>
+        <div class="filters__filter">
             <h2>Has This Ability</h2>
             <ul class="filters__list">
                 <li class="filters__list-item">
@@ -117,7 +118,7 @@
                 </li>
             </ul>
         </div>
-        <div class="filter">
+        <div class="filters__filter">
             <h2>Artist</h2>
             <ul class="filters__list">
                 <li class="filters__list-item">

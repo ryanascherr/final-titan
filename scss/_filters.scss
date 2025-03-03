@@ -1,9 +1,46 @@
 .filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
 
+    @media only screen and (min-width: 768px){
+        & {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media only screen and (min-width: 1200px){
+        & {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    &__filter {
+        border: 2px solid #706c6f;
+        border-radius: 10px;
+        background-color: #e6e5e6;
+        color: #1F1A1E;
+        padding: .5rem;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+        flex-wrap: wrap;
+    }
 
     &__list-item {
         display: flex;
         align-items: center;
+        margin: 7.5px;
+    }
+
+    &__input {
+        margin-right: 5px;
     }
 
     &__icon {
