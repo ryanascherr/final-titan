@@ -27,6 +27,14 @@ $(".js_order-type").click(function() {
     $(this).prop('checked', true);
 });
 
+$(".js_artist").click(function() {
+    let isNowChecked = $(this).is(':checked');
+    $('.js_artist').prop('checked', false);
+    if (isNowChecked) {
+        $(this).prop('checked', true);
+    }
+});
+
 $('.js_criteria').click(function() {
     $(".champions").empty();
     let array = getFilters(champions);
@@ -90,6 +98,40 @@ function getFilters(array) {
     }
     if (bench) {
         array = array.filter(creature => creature.bench_power);
+    }
+
+    let llythium = $(".js_llythium").is(':checked');
+    let desiati = $(".js_desiati").is(':checked');
+    let saura = $(".js_saura").is(':checked');
+    let vallee = $(".js_vallee").is(':checked');
+    let cuenca = $(".js_cuenca").is(':checked');
+    let votta = $(".js_votta").is(':checked');
+    let kerntke = $(".js_kerntke").is(':checked');
+    let martynets = $(".js_martynets").is(':checked');
+
+    if (llythium) {
+        array = array.filter(creature => creature.artist == "Llythium");
+    }
+    if (desiati) {
+        array = array.filter(creature => creature.artist == "Emanuele Desiati");
+    }
+    if (saura) {
+        array = array.filter(creature => creature.artist == "Yona Saura");
+    }
+    if (vallee) {
+        array = array.filter(creature => creature.artist == "Nicolas Vallee");
+    }
+    if (cuenca) {
+        array = array.filter(creature => creature.artist == "Xavier Cuenca");
+    }
+    if (votta) {
+        array = array.filter(creature => creature.artist == "Gabriele Votta");
+    }
+    if (kerntke) {
+        array = array.filter(creature => creature.artist == "Jann Kerntke");
+    }
+    if (martynets) {
+        array = array.filter(creature => creature.artist == "Denis Martynets");
     }
 
     return array;
