@@ -47,6 +47,7 @@ function getFilters(array) {
     let counter = $(".js_counter").is(':checked');
     let defeat = $(".js_defeat").is(':checked');
     let exclamation = $(".js_exclamation").is(':checked');
+    let reroll = $(".js_reroll").is(':checked');
 
     if (armor) {
         array = array.filter(creature => creature.armor != 0);
@@ -62,6 +63,9 @@ function getFilters(array) {
     }
     if (exclamation) {
         array = array.filter(creature => creature.has_exclamation_point);
+    }
+    if (reroll) {
+        array = array.filter(creature => creature.can_reroll);
     }
 
     let action = $(".js_action").is(':checked');
@@ -89,6 +93,8 @@ function getFilters(array) {
     let special = $(".js_special").is(':checked');
     let ultimate = $(".js_ultimate").is(':checked');
     let bench = $(".js_bench").is(':checked');
+    let startOfGame = $(".js_start-game").is(':checked');
+    let startOfFight = $(".js_start-fight").is(':checked');
 
     if (special) {
         array = array.filter(creature => creature.special_ability_name);
@@ -98,6 +104,12 @@ function getFilters(array) {
     }
     if (bench) {
         array = array.filter(creature => creature.bench_power);
+    }
+    if (startOfGame) {
+        array = array.filter(creature => creature.start_of_game);
+    }
+    if (startOfFight) {
+        array = array.filter(creature => creature.start_of_fight);
     }
 
     let llythium = $(".js_llythium").is(':checked');
