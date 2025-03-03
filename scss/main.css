@@ -4,7 +4,7 @@
   place-items: center;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
-  max-width: 1500px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 @media only screen and (min-width: 768px) {
