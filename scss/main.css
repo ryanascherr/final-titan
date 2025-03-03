@@ -60,9 +60,21 @@
 .filters__input {
   margin-right: 5px;
 }
+.filters__input:hover {
+  cursor: pointer;
+}
+.filters__label:hover {
+  cursor: pointer;
+}
 .filters__icon {
   width: 75px;
   margin-left: 7.5px;
+}
+.filters__icon--circle {
+  width: 30px;
+}
+.filters__icon--tall {
+  width: 25px;
 }
 
 body {
