@@ -12,7 +12,7 @@ function placeChampions(array) {
         let name = champion.name.toLowerCase();
         name = name.replace(/ /g,"_");
         $(".champions").append(`
-            <img loading="lazy" class="champions__champion" src="../img/champions/champion_${name}.png">
+            <img loading="lazy" class="champions__champion" src="./img/champions/champion_${name}.png">
         `)
     });
 }
