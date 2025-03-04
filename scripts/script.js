@@ -149,6 +149,17 @@ function getFilters(array) {
     if (startOfFight) {
         array = array.filter(champion => champion.start_of_fight);
     }
+    
+    let upgradeCards = $(".js_upgrade").is(':checked');
+    let benchInteract = $(".js_bench-interact").is(':checked');
+
+    if (upgradeCards) {
+        array = array.filter(champion => champion.interacts_with_upgrade_cards);
+    }
+
+    if (benchInteract) {
+        array = array.filter(champion => champion.interacts_with_bench || champion.returns_to_bench);
+    }
 
     let llythium = $(".js_llythium").is(':checked');
     let desiati = $(".js_desiati").is(':checked');

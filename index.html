@@ -11,7 +11,7 @@
     <h1>Final Titan</h1>
     <div class="filters">
         <div class="filters__filter">
-            <h2>Order By</h2>
+            <h2>Order By...</h2>
             <ul class="filters__list">
                 <li class="filters__list-item">
                     <input checked class="filters__input js_criteria js_order-type js_htl" type="checkbox" id="htl" name="checkbox" value="1">
@@ -55,6 +55,115 @@
                         Single Attack Damage
                         <img class="filters__icon filters__icon--tall" src="./img/icons/icon_damage.png" alt="damage icon">
                     </label>
+                </li>
+            </ul>
+        </div>
+        <div class="filters__filter">
+            <h2 class="filters__title">Specific Numbers</h2>
+            <h3>Health</h3>
+            <ul class="filters__list">
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_numbers-health js_health-at-least" type="checkbox" id="health-at-least" name="checkbox" value="1">
+                    <label class="filters__label" for="health-at-least">At Least</label>
+                    <select class="filters__select js_select js_select-health-at-least js_health-select" disabled="">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option selected="" value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_numbers-health js_health-at-most" type="checkbox" id="health-at-most" name="checkbox" value="1">
+                    <label class="filters__label" for="health-at-most">At Most</label>
+                    <select class="filters__select js_select js_select-health-at-most js_health-select" disabled="">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option selected="" value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_numbers-health js_health-exactly" type="checkbox" id="health-exactly" name="checkbox" value="1">
+                    <label class="filters__label" for="health-exactly">Exactly</label>
+                    <select class="filters__select js_select js_select-health-exactly js_health-select" disabled="">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option selected="" value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                </li>
+            </ul>
+            <hr>
+            <h3>Speed</h3>
+            <ul class="filters__list">
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_numbers-speed js_speed-at-least" type="checkbox" id="speed-at-least" name="checkbox" value="1">
+                    <label class="filters__label" for="speed-at-least">At Least</label>
+                    <select class="filters__select js_select js_select-speed-at-least js_speed-select" disabled="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option selected="" value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_numbers-speed js_speed-at-most" type="checkbox" id="speed-at-most" name="checkbox" value="1">
+                    <label class="filters__label" for="speed-at-most">At Most</label>
+                    <select class="filters__select js_select js_select-speed-at-most js_speed-select" disabled="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_numbers-speed js_speed-exactly" type="checkbox" id="speed-exactly" name="checkbox" value="1">
+                    <label class="filters__label" for="speed-exactly">Exactly</label>
+                    <select class="filters__select js_select js_select-speed-exactly js_speed-select" disabled="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option selected="" value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </li>
             </ul>
         </div>
@@ -169,113 +278,16 @@
                     <label class="filters__label" for="start-fight">Start of Fight</label>
                 </li>
             </ul>
-        </div>
-        <div class="filters__filter">
-            <h2 class="filters__title">Specific Numbers</h2>
-            <h3>Health</h3>
-            <ul class="filters__list">
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_numbers-health js_health-at-least" type="checkbox" id="health-at-least" name="checkbox" value="1">
-                    <label class="filters__label" for="health-at-least">At Least</label>
-                    <select class="filters__select js_select js_select-health-at-least js_health-select" disabled="">
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option selected="" value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                    </select>
-                </li>
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_numbers-health js_health-at-most" type="checkbox" id="health-at-most" name="checkbox" value="1">
-                    <label class="filters__label" for="health-at-most">At Most</label>
-                    <select class="filters__select js_select js_select-health-at-most js_health-select" disabled="">
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option selected="" value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                    </select>
-                </li>
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_numbers-health js_health-exactly" type="checkbox" id="health-exactly" name="checkbox" value="1">
-                    <label class="filters__label" for="health-exactly">Exactly</label>
-                    <select class="filters__select js_select js_select-health-exactly js_health-select" disabled="">
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option selected="" value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                    </select>
-                </li>
-            </ul>
             <hr>
-            <h3>Speed</h3>
+            <h2>Interacts With...</h2>
             <ul class="filters__list">
                 <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_numbers-speed js_speed-at-least" type="checkbox" id="speed-at-least" name="checkbox" value="1">
-                    <label class="filters__label" for="speed-at-least">At Least</label>
-                    <select class="filters__select js_select js_select-speed-at-least js_speed-select" disabled="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option selected="" value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
+                    <input class="filters__input js_criteria js_interacts js_upgrade" type="checkbox" id="upgrade" name="checkbox" value="1">
+                    <label class="filters__label" for="upgrade">Upgrade Cards</label>
                 </li>
                 <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_numbers-speed js_speed-at-most" type="checkbox" id="speed-at-most" name="checkbox" value="1">
-                    <label class="filters__label" for="speed-at-most">At Most</label>
-                    <select class="filters__select js_select js_select-speed-at-most js_speed-select" disabled="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option selected="" value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
-                </li>
-                <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_numbers-speed js_speed-exactly" type="checkbox" id="speed-exactly" name="checkbox" value="1">
-                    <label class="filters__label" for="speed-exactly">Exactly</label>
-                    <select class="filters__select js_select js_select-speed-exactly js_speed-select" disabled="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option selected="" value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
+                    <input class="filters__input js_criteria js_interacts js_bench-interact" type="checkbox" id="bench-interact" name="checkbox" value="1">
+                    <label class="filters__label" for="bench-interact">Bench</label>
                 </li>
             </ul>
         </div>
