@@ -1,3 +1,4 @@
+import { placeChampions } from "./placeChampions.js";
 import { manageInputs } from "./inputCommand.js";
 import { getAndSetFilters } from "./getAndSetFilters.js";
 import { getAndSetOrder } from "./getAndSetOrder.js";
@@ -10,15 +11,6 @@ const { data, error } = await supabaseData.from('champions').select()
 const champions = data;
 
 placeChampions(champions);
-function placeChampions(array) {
-    $(array).each(function( index, champion) {
-        let name = champion.name.toLowerCase();
-        name = name.replace(/ /g,"_");
-        $(".champions").append(`
-            <img loading="lazy" class="champions__champion" src="./img/champions/champion_${name}.png" alt="${champion.name}">
-        `)
-    });
-}
 
 $(".js_criteria").click(function() {
     manageInputs(this);
