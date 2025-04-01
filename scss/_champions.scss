@@ -21,5 +21,13 @@
 
     &__champion {
         width: 100%;
+        transition: transform .15s;
+        border-radius: 15px;
+        width: 100%;
+        
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
     }
 }
