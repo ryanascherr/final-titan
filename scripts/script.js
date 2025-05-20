@@ -46,5 +46,5 @@ $('html').keyup(function(e){
     if(e.keyCode == 8 && $(".modal").hasClass("open")){
         closeModal();
     }
-})
+});
 
