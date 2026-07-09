@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/main.css">
     <link rel="icon" type="image/png" href="./img/icons/icon_fav_icon.png">
-    <title>Final Titan Card Database</title>
+    <title>Final Titan Champion Database</title>
 </head>
 <body>
-    <h1>Final Titan Card Database</h1>
+    <h1>Final Titan Champion Database</h1>
     <div class="filters">
         <div class="filters__filter">
             <h2>Order By...</h2>
@@ -76,6 +76,8 @@
                         <option selected="" value="12">12</option>
                         <option value="13">13</option>
                         <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
                     </select>
                 </li>
                 <li class="filters__list-item">
@@ -92,6 +94,8 @@
                         <option value="12">12</option>
                         <option value="13">13</option>
                         <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
                     </select>
                 </li>
                 <li class="filters__list-item">
@@ -108,6 +112,8 @@
                         <option value="12">12</option>
                         <option value="13">13</option>
                         <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
                     </select>
                 </li>
             </ul>
@@ -129,6 +135,10 @@
                         <option selected="" value="9">9</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
                     </select>
                 </li>
                 <li class="filters__list-item">
@@ -146,6 +156,10 @@
                         <option value="9">9</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
                     </select>
                 </li>
                 <li class="filters__list-item">
@@ -163,6 +177,10 @@
                         <option value="9">9</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
                     </select>
                 </li>
             </ul>
@@ -174,35 +192,63 @@
                     <input class="filters__input js_criteria js_tokens js_action" type="checkbox" id="action" name="checkbox" value="1">
                     <label class="filters__label" for="action">
                         <!-- Action -->
-                        <img class="filters__icon" src="./img/icons/icon_action_token.png" alt="action token">
+                        <img class="filters__icon" src="./img/tokens/token_action.png" alt="action token">
                     </label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_tokens js_armor-token" type="checkbox" id="armor-token" name="checkbox" value="1">
                     <label class="filters__label" for="armor-token">
                         <!-- Armor -->
-                        <img class="filters__icon" src="./img/icons/icon_armor_token.png" alt="armor token">
+                        <img class="filters__icon" src="./img/tokens/token_armor.png" alt="armor token">
                     </label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_tokens js_dodge" type="checkbox" id="dodge" name="checkbox" value="1">
                     <label class="filters__label" for="dodge">
                         <!-- Dodge -->
-                        <img class="filters__icon" src="./img/icons/icon_dodge_token.png" alt="dodge token">
+                        <img class="filters__icon" src="./img/tokens/token_dodge.png" alt="dodge token">
                     </label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_tokens js_poison" type="checkbox" id="poison" name="checkbox" value="1">
                     <label class="filters__label" for="poison">
                         <!-- Poison -->
-                        <img class="filters__icon" src="./img/icons/icon_poison_token.png" alt="poison token">
+                        <img class="filters__icon" src="./img/tokens/token_poison.png" alt="poison token">
                     </label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_tokens js_power" type="checkbox" id="power" name="checkbox" value="1">
                     <label class="filters__label" for="power">
                         <!-- Power -->
-                        <img class="filters__icon" src="./img/icons/icon_power_token.png" alt="power token">
+                        <img class="filters__icon" src="./img/tokens/token_power.png" alt="power token">
+                    </label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_tokens js_blessed" type="checkbox" id="blessed" name="checkbox" value="1">
+                    <label class="filters__label" for="blessed">
+                        <!-- Blessed -->
+                        <img class="filters__icon" src="./img/tokens/token_blessed.png" alt="blessed token">
+                    </label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_tokens js_cursed" type="checkbox" id="cursed" name="checkbox" value="1">
+                    <label class="filters__label" for="cursed">
+                        <!-- Cursed -->
+                        <img class="filters__icon" src="./img/tokens/token_cursed.png" alt="cursed token">
+                    </label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_tokens js_fire" type="checkbox" id="fire" name="checkbox" value="1">
+                    <label class="filters__label" for="fire">
+                        <!-- Fire -->
+                        <img class="filters__icon" src="./img/tokens/token_fire.png" alt="fire token">
+                    </label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_tokens js_minion" type="checkbox" id="minion" name="checkbox" value="1">
+                    <label class="filters__label" for="minion">
+                        <!-- Minion -->
+                        <img class="filters__icon" src="./img/tokens/token_minion.png" alt="minion token">
                     </label>
                 </li>
             </ul>
@@ -227,24 +273,24 @@
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_other js_counter" type="checkbox" id="counter" name="checkbox" value="1">
                     <label class="filters__label" for="counter">
-                        Counter
-                        <img class="filters__icon filters__icon--tall" src="./img/icons/icon_counter.png" alt="counter icon">
+                        Cancel
+                        <img class="filters__icon filters__icon--tall" src="./img/icons/icon_cancel.png" alt="counter icon">
                     </label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_other js_defeat" type="checkbox" id="defeat" name="checkbox" value="1">
                     <label class="filters__label" for="defeat">
-                        Defeat
-                        <img class="filters__icon filters__icon--circle" src="./img/icons/icon_defeated.png" alt="defeated icon">
+                        KO!
+                        <img class="filters__icon filters__icon--circle" src="./img/icons/icon_ko.png" alt="defeated icon">
                     </label>
                 </li>
-                <li class="filters__list-item">
+                <!-- <li class="filters__list-item">
                     <input class="filters__input js_criteria js_other js_exclamation" type="checkbox" id="exclamation" name="checkbox" value="1">
                     <label class="filters__label" for="exclamation">
                         Exclamation Point
                         <img class="filters__icon filters__icon--tall" src="./img/icons/icon_exclamation_point.png" alt="exclamation point icon">
                     </label>
-                </li>
+                </li> -->
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_other js_reroll" type="checkbox" id="reroll" name="checkbox" value="1">
                     <label class="filters__label" for="reroll">
@@ -253,21 +299,33 @@
                     </label>
                 </li>
             </ul>
+            <hr>
+            <h2>Is From This Set</h2>
+            <ul class="filters__list">
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_set js_standard" type="checkbox" id="standard" name="checkbox" value="1">
+                    <label class="filters__label" for="standard">Standard</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_set js_advanced" type="checkbox" id="advanced" name="checkbox" value="1">
+                    <label class="filters__label" for="advanced">Advanced</label>
+                </li>
+            </ul>
         </div>
         <div class="filters__filter">
             <h2>Has This Ability</h2>
             <ul class="filters__list">
-                <li class="filters__list-item">
+                <!-- <li class="filters__list-item">
                     <input class="filters__input js_criteria js_abilities js_special" type="checkbox" id="special" name="checkbox" value="1">
                     <label class="filters__label" for="special">Special Ability</label>
-                </li>
+                </li> -->
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_abilities js_ultimate" type="checkbox" id="ultimate" name="checkbox" value="1">
                     <label class="filters__label" for="ultimate">Ultimate Form</label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_abilities js_bench" type="checkbox" id="bench" name="checkbox" value="1">
-                    <label class="filters__label" for="bench">Bench Power</label>
+                    <label class="filters__label" for="bench">Team Power</label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_abilities js_start-game" type="checkbox" id="start-game" name="checkbox" value="1">
@@ -289,22 +347,26 @@
                     <input class="filters__input js_criteria js_interacts js_bench-interact" type="checkbox" id="bench-interact" name="checkbox" value="1">
                     <label class="filters__label" for="bench-interact">Bench</label>
                 </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_interacts js_charge" type="checkbox" id="charge" name="checkbox" value="1">
+                    <label class="filters__label" for="charge">Charge</label>
+                </li>
             </ul>
         </div>
         <div class="filters__filter">
             <h2>Artist</h2>
             <ul class="filters__list">
-                <li class="filters__list-item">
+                <!-- <li class="filters__list-item">
                     <input class="filters__input js_criteria js_artist js_llythium" type="checkbox" id="llythium" name="checkbox" value="1">
                     <label class="filters__label" for="llythium">Llythium</label>
-                </li>
+                </li> -->
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_artist js_desiati" type="checkbox" id="desiati" name="checkbox" value="1">
                     <label class="filters__label" for="desiati">Emanuele Desiati</label>
                 </li>
                 <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_artist js_saura" type="checkbox" id="saura" name="checkbox" value="1">
-                    <label class="filters__label" for="saura">Yona Saura</label>
+                    <input class="filters__input js_criteria js_artist js_fanny" type="checkbox" id="fanny" name="checkbox" value="1">
+                    <label class="filters__label" for="fanny">Fanny Pastor-Berlie</label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_artist js_vallee" type="checkbox" id="vallee" name="checkbox" value="1">
@@ -315,19 +377,46 @@
                     <label class="filters__label" for="cuenca">Xavier Cuenca</label>
                 </li>
                 <li class="filters__list-item">
-                    <input class="filters__input js_criteria js_artist js_votta" type="checkbox" id="votta" name="checkbox" value="1">
-                    <label class="filters__label" for="votta">Gabriele Votta</label>
+                    <input class="filters__input js_criteria js_artist js_saura" type="checkbox" id="saura" name="checkbox" value="1">
+                    <label class="filters__label" for="saura">Yona Saura</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_artist js_jose" type="checkbox" id="jose" name="checkbox" value="1">
+                    <label class="filters__label" for="jose">Jose Garcia</label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_artist js_kerntke" type="checkbox" id="kerntke" name="checkbox" value="1">
                     <label class="filters__label" for="kerntke">Jann Kerntke</label>
                 </li>
                 <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_artist js_alessandro" type="checkbox" id="alessandro" name="checkbox" value="1">
+                    <label class="filters__label" for="alessandro">Alessandro Patria</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_artist js_max" type="checkbox" id="max" name="checkbox" value="1">
+                    <label class="filters__label" for="max">Maximilian Gotthold</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_artist js_vincent" type="checkbox" id="vincent" name="checkbox" value="1">
+                    <label class="filters__label" for="vincent">Vincent Dutrait</label>
+                </li>
+                <li class="filters__list-item">
                     <input class="filters__input js_criteria js_artist js_martynets" type="checkbox" id="martynets" name="checkbox" value="1">
                     <label class="filters__label" for="martynets">Denis Martynets</label>
                 </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_artist js_votta" type="checkbox" id="votta" name="checkbox" value="1">
+                    <label class="filters__label" for="votta">Gabriele Votta</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_artist js_marie" type="checkbox" id="marie" name="checkbox" value="1">
+                    <label class="filters__label" for="marie">Marie Bergeron</label>
+                </li>
             </ul>
         </div>
+    </div>
+    <div class="results-box">
+        <span class="js_results-number">
     </div>
     <div class="champions"></div>
     <div class="modal">

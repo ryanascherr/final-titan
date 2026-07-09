@@ -4,6 +4,7 @@ export function getAndSetFilters(array) {
     array = getAbilities(array);
     array = getInteractions(array);
     array = getArtists(array);
+    array = getSet(array);
     array = getHealth(array);
     array = getSpeed(array);
 
@@ -16,21 +17,37 @@ function getTokens(array) {
     let dodge = $(".js_dodge").is(':checked');
     let poison = $(".js_poison").is(':checked');
     let power = $(".js_power").is(':checked');
+    let blessed = $(".js_blessed").is(':checked');
+    let cursed = $(".js_cursed").is(':checked');
+    let fire = $(".js_fire").is(':checked');
+    let minion = $(".js_minion").is(':checked');
 
     if (action) {
-        array = array.filter(champion => champion.gives_action_token);
+        array = array.filter(champion => champion.hasAction);
     }
     if (armorToken) {
-        array = array.filter(champion => champion.gives_armor_token);
+        array = array.filter(champion => champion.hasArmor);
     }
     if (dodge) {
-        array = array.filter(champion => champion.gives_dodge_token);
+        array = array.filter(champion => champion.hasDodge);
     }
     if (poison) {
-        array = array.filter(champion => champion.has_poison);
+        array = array.filter(champion => champion.hasPoison);
     }
     if (power) {
-        array = array.filter(champion => champion.gives_power_token);
+        array = array.filter(champion => champion.hasPower);
+    }
+    if (blessed) {
+        array = array.filter(champion => champion.hasBlessed);
+    }
+    if (cursed) {
+        array = array.filter(champion => champion.hasCursed);
+    }
+    if (fire) {
+        array = array.filter(champion => champion.hasFire);
+    }
+    if (minion) {
+        array = array.filter(champion => champion.hasMinion);
     }
 
     return array;
@@ -39,28 +56,28 @@ function getTokens(array) {
 function getIcons(array) {
     let armor = $(".js_armor").is(':checked');
     let drain = $(".js_drain").is(':checked');
-    let counter = $(".js_counter").is(':checked');
+    let cancel = $(".js_counter").is(':checked');
     let defeat = $(".js_defeat").is(':checked');
     let exclamation = $(".js_exclamation").is(':checked');
     let reroll = $(".js_reroll").is(':checked');
 
     if (armor) {
-        array = array.filter(champion => champion.armor != 0);
+        array = array.filter(champion => champion.armor != 0 && champion.armor);
     }
     if (drain) {
-        array = array.filter(champion => champion.has_drain);
+        array = array.filter(champion => champion.hasDrain);
     }
-    if (counter) {
-        array = array.filter(champion => champion.has_counter);
+    if (cancel) {
+        array = array.filter(champion => champion.hasCancel);
     }
     if (defeat) {
-        array = array.filter(champion => champion.has_defeat_icon);
+        array = array.filter(champion => champion.hasKO);
     }
     if (exclamation) {
         array = array.filter(champion => champion.has_exclamation_point);
     }
     if (reroll) {
-        array = array.filter(champion => champion.can_reroll);
+        array = array.filter(champion => champion.hasReroll);
     }
 
     return array;
@@ -74,19 +91,19 @@ function getAbilities(array) {
     let startOfFight = $(".js_start-fight").is(':checked');
 
     if (special) {
-        array = array.filter(champion => champion.special_ability_name);
+        array = array.filter(champion => champion.hasSpecialAbility);
     }
     if (ultimate) {
-        array = array.filter(champion => champion.has_ultimate_form);
+        array = array.filter(champion => champion.hasUltimateForm);
     }
     if (bench) {
-        array = array.filter(champion => champion.bench_power);
+        array = array.filter(champion => champion.hasTeamPower);
     }
     if (startOfGame) {
-        array = array.filter(champion => champion.start_of_game);
+        array = array.filter(champion => champion.hasStartOfGame);
     }
     if (startOfFight) {
-        array = array.filter(champion => champion.start_of_fight);
+        array = array.filter(champion => champion.hasStartOfFight);
     }
 
     return array;
@@ -95,12 +112,16 @@ function getAbilities(array) {
 function getInteractions(array) {
     let upgradeCards = $(".js_upgrade").is(':checked');
     let benchInteract = $(".js_bench-interact").is(':checked');
+    let charge = $(".js_charge").is(':checked');
 
     if (upgradeCards) {
-        array = array.filter(champion => champion.interacts_with_upgrade_cards);
+        array = array.filter(champion => champion.hasUpgradeCardInteraction);
     }
     if (benchInteract) {
-        array = array.filter(champion => champion.interacts_with_bench || champion.returns_to_bench);
+        array = array.filter(champion => champion.hasBenchInteraction);
+    }
+    if (charge) {
+        array = array.filter(champion => champion.hasChargeInteraction);
     }
 
     return array;
@@ -115,6 +136,12 @@ function getArtists(array) {
     let votta = $(".js_votta").is(':checked');
     let kerntke = $(".js_kerntke").is(':checked');
     let martynets = $(".js_martynets").is(':checked');
+    let max = $(".js_max").is(':checked');
+    let alessandro = $(".js_alessandro").is(':checked');
+    let fanny = $(".js_fanny").is(':checked');
+    let vincent = $(".js_vincent").is(':checked');
+    let jose = $(".js_jose").is(':checked');
+    let marie = $(".js_marie").is(':checked');
 
     if (llythium) {
         array = array.filter(champion => champion.artist == "Llythium");
@@ -139,6 +166,38 @@ function getArtists(array) {
     }
     if (martynets) {
         array = array.filter(champion => champion.artist == "Denis Martynets");
+    }
+    if (max) {
+        array = array.filter(champion => champion.artist == "Maximilian Gotthold");
+    }
+    if (alessandro) {
+        array = array.filter(champion => champion.artist == "Alessandro Patria");
+    }
+    if (fanny) {
+        array = array.filter(champion => champion.artist == "Fanny Pastor-Berlie");
+    }
+    if (vincent) {
+        array = array.filter(champion => champion.artist == "Vincent Dutrait");
+    }
+    if (jose) {
+        array = array.filter(champion => champion.artist == "Jose Garcia");
+    }
+    if (marie) {
+        array = array.filter(champion => champion.artist == "Marie Bergeron");
+    }
+
+    return array;
+}
+
+function getSet(array) {
+    let standard = $(".js_standard").is(':checked');
+    let advanced =$(".js_advanced").is(':checked');
+
+    if (standard) {
+        array = array.filter(champion => champion.set == "Standard");
+    }
+    if (advanced) {
+        array = array.filter(champion => !champion.set);
     }
 
     return array;

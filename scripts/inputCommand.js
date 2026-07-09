@@ -14,6 +14,9 @@ export function manageInputs(clickedInput) {
     if (clickedInput.classList.contains("js_artist")) {
         manageArtistInputs(clickedInput);
     }
+    if (clickedInput.classList.contains("js_set")) {
+        manageSetInputs(clickedInput);
+    }
 }
 
 function manageOrderInputs(clickedInput) {
@@ -46,6 +49,13 @@ function manageArtistInputs(clickedInput) {
     let isNowChecked = $(clickedInput).is(':checked');
     $('.js_artist').prop('checked', false);
     if (isNowChecked) {
+        $(clickedInput).prop('checked', true);
+    }
+}
+
+function manageSetInputs(clickedInput) {
+    if ($(clickedInput).is(':checked')) {
+        $('.js_set').prop('checked', false);
         $(clickedInput).prop('checked', true);
     }
 }

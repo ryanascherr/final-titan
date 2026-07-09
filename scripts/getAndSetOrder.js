@@ -32,6 +32,10 @@ function orderByTotalDamage(array, highToLow) {
 
     let championsByTotalDamage = [];
 
+    championsByTotalDamage = array.sort(function(a, b) {
+        return a === b ? 0 : a.name < b.name ? -1 : 1;
+    });
+
     if (highToLow) {
         championsByTotalDamage = array.sort((a, b) => b.totalAttack - a.totalAttack);
     } else {
@@ -87,6 +91,10 @@ function orderByName(array, highToLow) {
 function orderByHealth(array, highToLow) {
     let championsByHealth = [];
 
+    championsByHealth = array.sort(function(a, b) {
+        return a === b ? 0 : a.name < b.name ? -1 : 1;
+    });
+
     if (highToLow) {
         championsByHealth = array.sort((a, b) => b.health - a.health);
     } else {
@@ -99,6 +107,10 @@ function orderByHealth(array, highToLow) {
 
 function orderBySpeed(array, highToLow) {
     let championsBySpeed = [];
+
+    championsBySpeed = array.sort(function(a, b) {
+        return a === b ? 0 : a.name < b.name ? -1 : 1;
+    });
 
     if (highToLow) {
         championsBySpeed = array.sort((a, b) => b.speed - a.speed);
