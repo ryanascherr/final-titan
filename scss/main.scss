@@ -1,6 +1,8 @@
 @import "_champions.scss";
 @import "_filters.scss";
 @import "_modal.scss";
+@import "_tab-nav.scss";
+@import "_upgrade-cards.scss";
 
 body {
     background-color: #1F1A1E;
@@ -32,4 +34,8 @@ ul {
 .results-box {
     text-align: center;
     margin-bottom: 1.5rem;
+}
+
+.hidden {
+    display: none;
 }

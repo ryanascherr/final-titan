@@ -3,7 +3,7 @@ export function placeChampions(array) {
         let name = champion.name.toLowerCase();
         name = name.replace(/ /g,"-");
         $(".champions").append(`
-            <img loading="lazy" class="champions__champion" src="./img/champions_new/champion_${name}.jpg" alt="${champion.name}">
+            <img loading="lazy" class="champions__champion" src="./img/champions/champion_${name}.jpg" alt="${champion.name}">
         `)
     });
 }

@@ -1,0 +1,42 @@
+.tab-nav {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #888;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0 0 0.5rem 0;
+        border-bottom: 3px solid #1F1A1E;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 3px;
+            background: #fff;
+            transition: width 0.25s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+    .active {
+        color: #fff;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}

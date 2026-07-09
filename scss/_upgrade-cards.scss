@@ -1,0 +1,32 @@
+.upgrade-cards {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+    max-width: 1800px;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 768px){
+        & {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    @media only screen and (min-width: 1200px){
+        & {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    .upgrade-card {
+        width: 100%;
+        transition: transform .15s;
+        border-radius: 15px;
+        width: 100%;
+        
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+    }
+}

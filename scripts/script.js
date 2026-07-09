@@ -1673,6 +1673,11 @@ $('body').on('click', '.champions__champion', function () {
     openModal(src);
 });
 
+$('body').on('click', '.upgrade-card', function () {
+    let src = $(this).attr('src');
+    openModal(src);
+});
+
 $('body').on('click', '.modal', function () {
     closeModal();
 });
@@ -1680,6 +1685,33 @@ $('body').on('click', '.modal', function () {
 $('html').keyup(function(e){
     if(e.keyCode == 8 && $(".modal").hasClass("open")){
         closeModal();
+    }
+});
+
+// When a tab is clicked, hide all tab containers then show the correct one
+document.body.addEventListener('click', function(event) {
+    if (event.target.classList.contains("js_tab")) {
+        let tabElems = document.querySelectorAll(".js_tab");
+        let tabContainers = document.querySelectorAll(".tab")
+        let titansTab = document.querySelector(".tab-titans");
+        let upgradeCardsTab = document.querySelector(".tab-upgrade-cards");
+
+        tabElems.forEach((tab) => {
+            tab.classList.remove("active");
+        });
+
+        event.target.classList.add("active");
+
+        tabContainers.forEach((tabContainer) => {
+            tabContainer.classList.add("hidden");
+        });
+
+        if (event.target.classList.contains("js_titans")) {
+            titansTab.classList.remove("hidden");
+        }
+        if (event.target.classList.contains("js_upgrade-cards")) {
+            upgradeCardsTab.classList.remove("hidden");
+        }
     }
 });
 
