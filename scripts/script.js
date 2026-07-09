@@ -1644,7 +1644,7 @@ function displayResultsCount() {
     let championContainer = document.querySelector(".champions");
     let resultCount = championContainer.childElementCount;
     let resultsElem = document.querySelector(".js_results-number");
-    resultsElem.textContent = resultCount + " Champions Found";
+    resultsElem.textContent = resultCount + " Titans Found";
 }
 
 $(".js_criteria").click(function() {
