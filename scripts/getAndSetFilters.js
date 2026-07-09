@@ -142,6 +142,7 @@ function getArtists(array) {
     let vincent = $(".js_vincent").is(':checked');
     let jose = $(".js_jose").is(':checked');
     let marie = $(".js_marie").is(':checked');
+    let daniel = $(".js_daniel").is(':checked');
 
     if (llythium) {
         array = array.filter(champion => champion.artist == "Llythium");
@@ -184,6 +185,9 @@ function getArtists(array) {
     }
     if (marie) {
         array = array.filter(champion => champion.artist == "Marie Bergeron");
+    }
+    if (daniel) {
+        array = array.filter(champion => champion.artist == "Daniel Caballero");
     }
 
     return array;
