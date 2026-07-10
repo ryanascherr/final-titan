@@ -178,13 +178,19 @@
   width: 100%;
 }
 
+:root {
+  --offset-distance: 7.5px;
+}
+
 .upgrade-cards {
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1.5rem;
+  grid-gap: 2.5rem;
   max-width: 1800px;
   margin: 0 auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 @media only screen and (min-width: 768px) {
   .upgrade-cards {
@@ -196,15 +202,62 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
-.upgrade-cards .upgrade-card {
-  width: 100%;
+.upgrade-cards .upgrade-card-container {
+  text-align: center;
+  font-size: 20px;
+  position: relative;
   transition: transform 0.15s;
-  border-radius: 15px;
-  width: 100%;
 }
-.upgrade-cards .upgrade-card:hover {
+.upgrade-cards .upgrade-card-container div {
+  margin-bottom: 1rem;
+}
+.upgrade-cards .upgrade-card-container:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+.upgrade-cards .upgrade-card {
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
+  z-index: 10;
+  border: 1px solid #fff;
+}
+.upgrade-cards .quantity {
+  background-color: #1F1A1E;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  font-size: 20px;
+}
+.upgrade-cards .offset {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.15); /* light ghost */
+  border: 1px solid fff; /* subtle outline */
+  opacity: 1; /* let the background handle transparency */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.upgrade-cards .offset-1 {
+  transform: translate(var(--offset-distance), var(--offset-distance));
+  z-index: 5;
+}
+.upgrade-cards .offset-2 {
+  transform: translate(calc(var(--offset-distance) * 2), calc(var(--offset-distance) * 2));
+  z-index: 4;
+}
+.upgrade-cards .offset-3 {
+  transform: translate(calc(var(--offset-distance) * 3), calc(var(--offset-distance) * 3));
+  z-index: 3;
+}
+.upgrade-cards .offset-4 {
+  transform: translate(calc(var(--offset-distance) * 4), calc(var(--offset-distance) * 4));
+  z-index: 2;
 }
 
 body {
