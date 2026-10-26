@@ -2,6 +2,15 @@
     --offset-distance: 7.5px;
 }
 
+.upgrade-card-heading {
+    margin-bottom: 1.5rem;
+}
+
+.upgrade-card-divider {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 .upgrade-cards {
     display: grid;
     place-items: center;
