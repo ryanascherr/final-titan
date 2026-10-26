@@ -194,14 +194,27 @@ function getArtists(array) {
 }
 
 function getSet(array) {
+    let all = $(".js_standard").is(':checked');
     let standard = $(".js_standard").is(':checked');
     let advanced =$(".js_advanced").is(':checked');
+    let godspark =$(".js_godspark").is(':checked');
+    let mindbug =$(".js_mindbug").is(':checked');
+    let promo =$(".js_promo").is(':checked');
 
     if (standard) {
         array = array.filter(champion => champion.set == "Standard");
     }
     if (advanced) {
         array = array.filter(champion => !champion.set);
+    }
+    if (godspark) {
+        array = array.filter(champion => champion.set == "Godspark");
+    }
+    if (mindbug) {
+        array = array.filter(champion => champion.set == "Mindbug");
+    }
+    if (promo) {
+        array = array.filter(champion => champion.set == "Promo");
     }
 
     return array;
