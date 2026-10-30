@@ -43,7 +43,8 @@ let champions = [
         hasPower: true,
         hasArmor: true,
         hasMinion: true,
-        hasBlessed: true
+        hasBlessed: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Archangel",
@@ -59,6 +60,7 @@ let champions = [
         hasReroll: true,
         hasBlessed: true,
         hasPower: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Azurian",
@@ -78,6 +80,7 @@ let champions = [
         hasReroll: true,
         hasPoison: true,
         hasStartOfFight: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Barhart",
@@ -108,7 +111,8 @@ let champions = [
         hasMinion: true,
         hasHeal: true,
         hasKO: true,
-        hasPoison: true
+        hasPoison: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Cerberus",
@@ -222,6 +226,7 @@ let champions = [
         hasReroll: true,
         hasDrain: true,
         hasKO: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Dr Undo",
@@ -312,6 +317,7 @@ let champions = [
         hasArmor: true,
         hasKO: true,
         hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Fafnir",
@@ -424,6 +430,7 @@ let champions = [
         hasSpecialAbility: true,
         hasUltimateForm: false,
         hasMinion: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Mad Hatter",
@@ -439,6 +446,7 @@ let champions = [
         hasPower: true,
         hasReroll: true,
         hasBenchInteraction: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Madison",
@@ -504,6 +512,7 @@ let champions = [
         hasArmor: true,
         hasPoison: true,
         hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Mindbug",
@@ -552,6 +561,7 @@ let champions = [
         hasKO: true,
         hasReroll: true,
         hasDrain: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Rapunzel",
@@ -789,6 +799,7 @@ let champions = [
         hasStartOfFight: true,
         hasMinion: true,
         hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Water Dancer",
@@ -854,6 +865,7 @@ let champions = [
         hasHeal: true,
         hasKO: true,
         hasUpgradeCardInteraction: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Arachnidra",
@@ -919,6 +931,7 @@ let champions = [
         hasDodge: true,
         hasKO: true,
         hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Chessmaster",
@@ -970,6 +983,7 @@ let champions = [
         hasUltimateForm: false,
         set: "Standard",
         hasDrain: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Cyborilla",
@@ -1000,6 +1014,7 @@ let champions = [
         set: "Standard",
         hasPower: true,
         hasFire: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Demonica",
@@ -1015,6 +1030,7 @@ let champions = [
         set: "Standard",
         hasDodge: true,
         hasKO: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Draghoul",
@@ -1047,6 +1063,7 @@ let champions = [
         hasStartOfFight: true,
         hasDodge: true,
         hasKO: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Evil Djinn",
@@ -1479,6 +1496,7 @@ let champions = [
         set: "Standard",
         hasUpgradeCardInteraction: true,
         hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "The Enforcers",
@@ -1497,6 +1515,7 @@ let champions = [
         hasArmor: true,
         hasPower: true,
         hasDodge: true,
+        hasMoveTrigger: true,
     },
     {
         name: "The Great Abomination",
@@ -1626,7 +1645,8 @@ let champions = [
         hasKO: true,
         hasPoison: true,
         hasReroll: true,
-        hasMinion: true
+        hasMinion: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Hive Mind",
@@ -1644,7 +1664,8 @@ let champions = [
         hasKO: false,
         hasStartOfGame: true,
         hasMinion: true,
-        hasReroll: true
+        hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Baba Yaga",
@@ -1701,7 +1722,8 @@ let champions = [
         hasKO: false,
         hasStartOfFight: true,
         hasReroll: true,
-        hasDodge: true
+        hasDodge: true,
+        hasMoveTrigger: true,
     },
     {
         name: "The Ancient One",
@@ -1825,7 +1847,8 @@ let champions = [
         hasSteal: true,
         hasUpgradeCardInteraction: true,
         hasKO: true,
-        hasReroll: true
+        hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Anubis",
@@ -1878,7 +1901,8 @@ let champions = [
         hasDodge: true,
         hasKO: true,
         hasTeamPower: true,
-        hasReroll: true
+        hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Cosmo",
@@ -1894,7 +1918,8 @@ let champions = [
         set: "Godspark",
         hasLegendaryUpdgrade: true,
         hasBenchInteraction: true,
-        hasReroll: true
+        hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Arthur Pendragon",
@@ -1929,7 +1954,8 @@ let champions = [
         hasDodge: true,
         hasPoison: true,
         hasHeal: true,
-        hasKO: true
+        hasKO: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Osiris",
@@ -2076,7 +2102,8 @@ let champions = [
         hasDodge: true,
         hasUpgradeCardInteraction: true,
         hasKO: true,
-        hasReroll: true
+        hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Dragon Fruit",
@@ -2092,7 +2119,8 @@ let champions = [
         set: "Mindbug",
         hasKO: true,
         hasDrain: true,
-        hasReroll: true
+        hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Pineapple Paladin",
@@ -2205,7 +2233,8 @@ let champions = [
         hasSteal: true,
         hasReroll: true,
         hasDrain: true,
-        hasKO: true
+        hasKO: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Bullet Train",
@@ -2251,6 +2280,7 @@ let champions = [
         hasStartOfGame: true,
         hasAction: true,
         hasKO: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Lord Seedler",
@@ -2265,7 +2295,8 @@ let champions = [
         hasUltimateForm: false,
         set: "Mindbug",
         hasUpgradeCardInteraction: true,
-        hasReroll: true
+        hasReroll: true,
+        hasMoveTrigger: true,
     },
     {
         name: "Shark Dog",

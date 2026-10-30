@@ -60,6 +60,7 @@ function getIcons(array) {
     let defeat = $(".js_defeat").is(':checked');
     let exclamation = $(".js_exclamation").is(':checked');
     let reroll = $(".js_reroll").is(':checked');
+    let special = $(".js_special").is(':checked');
 
     if (armor) {
         array = array.filter(champion => champion.armor != 0 && champion.armor);
@@ -78,6 +79,9 @@ function getIcons(array) {
     }
     if (reroll) {
         array = array.filter(champion => champion.hasReroll);
+    }
+    if (special) {
+        array = array.filter(champion => champion.hasMoveTrigger);
     }
 
     return array;
