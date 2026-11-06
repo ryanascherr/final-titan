@@ -11,6 +11,8 @@ import { openModal, closeModal } from "./modalControl.js";
 // .order('name', { ascending: true });
 // const champions = data;
 
+// Test comment
+
 let champions = [
     {
         name: "Alice",
