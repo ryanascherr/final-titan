@@ -55,6 +55,7 @@ function getTokens(array) {
 
 function getIcons(array) {
     let armor = $(".js_armor").is(':checked');
+    let heal = $(".js_heal").is(':checked');
     let drain = $(".js_drain").is(':checked');
     let cancel = $(".js_counter").is(':checked');
     let defeat = $(".js_defeat").is(':checked');
@@ -64,6 +65,9 @@ function getIcons(array) {
 
     if (armor) {
         array = array.filter(champion => champion.armor != 0 && champion.armor);
+    }
+    if (heal) {
+        array = array.filter(champion => champion.hasHeal);
     }
     if (drain) {
         array = array.filter(champion => champion.hasDrain);
