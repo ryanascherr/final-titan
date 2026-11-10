@@ -610,7 +610,6 @@ let champions = [
         hasMinion: true,
         hasKO: true,
         hasReroll: true,
-        hasBenchInteraction: true,
     },
     {
         name: "Skinwalker",
@@ -1685,7 +1684,6 @@ let champions = [
         hasKO: true,
         hasDrain: true,
         hasPoison: true,
-        hasBenchInteraction: true,
         hasCursed: true,
         hasCancel: true,
         hasStartOfFight: true,
@@ -2425,4 +2423,26 @@ document.body.addEventListener('click', function(event) {
         }
     }
 });
+
+$(".js_search").keyup(function(event) {
+    $(".champions").empty();
+    let inputVal = $(".js_search").val();
+    inputVal = inputVal.toLowerCase();
+    liveSearch(inputVal, champions);
+});
+
+function liveSearch(inputVal, champions) {
+    let array = [];
+    $(champions).each(function() {
+        let titan = this;
+        let name = titan.name.toLowerCase();
+
+        if (name.includes(inputVal)) {
+            array.push(this);
+        }
+    })
+    console.log(array);
+    placeChampions(array);
+    displayResultsCount();
+}
 
